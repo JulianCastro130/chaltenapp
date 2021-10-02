@@ -3,9 +3,7 @@ function capture(){
         this.user=user;
         this.country=country;
     }
-
     var userCapture = document.getElementById("user").value;
-
     var countryCapture = document.getElementById("country").value;
 
     newUser = new User(userCapture,countryCapture);
@@ -17,3 +15,9 @@ function addPlus(){
     dataBase.push(newUser);
     console.log(dataBase);
 };
+
+$(document).ready(function(){
+    setTimeout(function(){
+        $("#myModal").modal("show");
+    }, 2000);
+});
