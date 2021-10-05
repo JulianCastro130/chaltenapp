@@ -16,6 +16,7 @@ function addPlus(){
     console.log(dataBase);
 };
 
+// MODAL
 $(document).ready(function(){
     setTimeout(function(){
         $("#myModal").modal("show");
