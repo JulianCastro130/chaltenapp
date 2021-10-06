@@ -5,7 +5,6 @@ class Plan {
         this.time = time;
     }
 }
-
 class UI {
     addPlan(plan) {
         const planList = document.getElementById('plan-list');
