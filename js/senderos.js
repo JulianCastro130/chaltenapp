@@ -59,8 +59,6 @@ if (contenedorSenderos) {
   });
 }
 
-contenedorSenderos.appendChild(div)
-
 arraySenderos = JSON.parse(localStorage.getItem("senderos"));
 console.log("carga inicial desde el local storage");
 
