@@ -41,21 +41,23 @@ arraySenderos.sort((a,b) => {
 console.log(arraySenderos);
 
 
-const contenedorSenderos = document.getElementById('senderos')
-
-arraySenderos.forEach((senderos) => {
-    const div = document.createElement('div')
-    div.className = "card-img-top"
-    div.style = "width: 18rem"
+const contenedorSenderos = document.getElementById("senderos");
+if (contenedorSenderos) {
+  arraySenderos.forEach((senderos) => {
+    const div = document.createElement("div");
+    div.className = "card-img-top";
+    div.style = "width: 18rem";
     div.innerHTML = `
-    <img src=${senderos.imagen} class="card-img-top">
-    <div class="card-body">
-    <h5 class="card-title">${senderos.nombre}</h5>
-    <p class="card-text">${senderos.info}</p>
-    <a href="#" class="btn">Hola</a>
-    </div>
-`
-})
+          <img src=${senderos.imagen} class="card-img-top">
+          <div class="card-body">
+          <h5 class="card-title">${senderos.nombre}</h5>
+          <p class="card-text">${senderos.info}</p>
+          <a href="#" class="btn">Hola</a>
+          </div>
+      `;
+    contenedorSenderos.appendChild(div);
+  });
+}
 
 contenedorSenderos.appendChild(div)
 
