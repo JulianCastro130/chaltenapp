@@ -1,12 +1,15 @@
 class sendero {
-    constructor(imagen,nombre,distancia,dificultad,tiempo,altura) {
+    constructor(imagen,nombre,distancia,dificultad,dificultad2,tiempo,tiempo2,altura,mapa) {
         this.imagen = imagen;
         this.nombre = nombre;
         this.distancia = distancia;
         this.dificultad = dificultad;
+        this.dificultad2 = dificultad2
         this.tiempo = tiempo;
+        this.tiempo2 = tiempo2;
         this.altura = altura;
-        this.info = `El cerro ${nombre} está a ${distancia}km del pueblo, el nivel de dificultad es ${dificultad}, se ascienden ${altura}snm durante todo el trayecto, y se estima que tardarán ${tiempo} horas en llegar`;
+        this.mapa = mapa;
+        this.info = `El ${nombre} está a ${distancia}km del pueblo, el nivel de dificultad es ${dificultad2}, se ascienden ${altura}snm durante todo el trayecto, y se estima que tardarán ${tiempo} en llegar`;
     }
     verInfo(){
         alert(this.info)
@@ -20,9 +23,9 @@ function actualizarStorage(arraySenderos) {
 
 let arraySenderos = [];
 
-const cerroTorre = new sendero('https://via.placeholder.com/200',"torre",9,7,3,600);
-const cerroFitz = new sendero('https://via.placeholder.com/200',"fitz",10,10,3.5,1200);
-const cascadaSalto = new sendero('https://via.placeholder.com/200',"salto",4,3,0.5,200);
+const cerroTorre = new sendero('img/lagunatorre.jpg',"Laguna de los tres",9,7,"media","3 hs","03:00 hs",600,"map-torre.html");
+const cerroFitz = new sendero('img/lagunadelostres.jpg',"L",10,10,"alta","4hs y media","04:30 hs",1200,"map-fitz.html");
+const cascadaSalto = new sendero('img/chorrillo_de_salto.jpg',"Chorrillo del salto",4,3,"baja","media hora","00:30 hs",200,"map-chorrillo.html");
 
 let totalSenderos = arraySenderos.push(cerroTorre, cerroFitz, cascadaSalto);
 
@@ -46,14 +49,21 @@ if (contenedorSenderos) {
   arraySenderos.forEach((senderos) => {
     const div = document.createElement("div");
     div.className = "card-img-top";
-    div.style = "width: 18rem";
+    div.style = "width: 100%";
     div.innerHTML = `
-          <img src=${senderos.imagen} class="card-img-top">
-          <div class="card-body">
-          <h5 class="card-title">${senderos.nombre}</h5>
-          <p class="card-text">${senderos.info}</p>
-          <a href="#" class="btn">Hola</a>
-          </div>
+                    <div class="card mt-4 ml-5 p-0">
+                    <img src=${senderos.imagen} class="rounded">
+                    <h4>${senderos.nombre}</h4>
+                    <p>${senderos.info}</p>
+                    <div class="difficulty">
+                        <i class="far fa-clock"></i>
+                        <p>${senderos.dificultad2}</p>
+                    </div>
+                    <div class="time">
+                        <i class="fas fa-hiking"></i><p>${senderos.tiempo2}</p>
+                    </div>
+                    <a class="btn" href="${senderos.mapa}">Map</a>
+                </div>
       `;
     contenedorSenderos.appendChild(div);
   });

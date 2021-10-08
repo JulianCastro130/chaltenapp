@@ -16,6 +16,8 @@ function addPlus(){
     console.log(dataBase);
 };
 
+localStorage.setItem('login', JSON.stringify(dataBase))
+
 // MODAL
 $(document).ready(function(){
     setTimeout(function(){
