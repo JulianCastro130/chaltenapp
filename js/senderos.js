@@ -9,7 +9,7 @@ class sendero {
         this.tiempo2 = tiempo2;
         this.altura = altura;
         this.mapa = mapa;
-        this.info = `El ${nombre} está a ${distancia}km del pueblo, el nivel de dificultad es ${dificultad2}, se ascienden ${altura}snm durante todo el trayecto, y se estima que tardarán ${tiempo} en llegar`;
+        this.info = `Está a ${distancia}km del pueblo, el nivel de dificultad es ${dificultad2}, se ascienden ${altura}snm durante todo el trayecto, y se estima que tardarán ${tiempo} en llegar`;
     }
     verInfo(){
         alert(this.info)
@@ -23,8 +23,8 @@ function actualizarStorage(arraySenderos) {
 
 let arraySenderos = [];
 
-const cerroTorre = new sendero('img/lagunatorre.jpg',"Laguna de los tres",9,7,"media","3 hs","03:00 hs",600,"map-torre.html");
-const cerroFitz = new sendero('img/lagunadelostres.jpg',"L",10,10,"alta","4hs y media","04:30 hs",1200,"map-fitz.html");
+const cerroTorre = new sendero('img/lagunatorre.jpg',"Laguna torre",9,7,"media","3 hs","03:00 hs",600,"map-torre.html");
+const cerroFitz = new sendero('img/lagunadelostres.jpg',"Laguna de los tres",10,10,"alta","4hs y media","04:30 hs",1200,"map-fitz.html");
 const cascadaSalto = new sendero('img/chorrillo_de_salto.jpg',"Chorrillo del salto",4,3,"baja","media hora","00:30 hs",200,"map-chorrillo.html");
 
 let totalSenderos = arraySenderos.push(cerroTorre, cerroFitz, cascadaSalto);
