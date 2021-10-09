@@ -51,7 +51,7 @@ if (contenedorSenderos) {
     div.className = "card-img-top";
     div.style = "width: 100%";
     div.innerHTML = `
-                    <div class="card mt-4 ml-5 p-0">
+                    <div class="card mt-4 ml-5 p-0 rounded">
                     <img src=${senderos.imagen} class="rounded">
                     <h4>${senderos.nombre}</h4>
                     <p>${senderos.info}</p>

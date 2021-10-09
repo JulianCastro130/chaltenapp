@@ -9,15 +9,14 @@ function capture(){
     newUser = new User(userCapture,countryCapture);
     console.log(newUser);
     addPlus()
+    localStorage.setItem('nameUser', JSON.stringify(userCapture))
+    localStorage.setItem('countryUser', JSON.stringify(countryCapture))
 }
 var dataBase=[];
 function addPlus(){
     dataBase.push(newUser);
     console.log(dataBase);
 };
-
-localStorage.setItem('login', JSON.stringify(dataBase))
-
 // MODAL
 $(document).ready(function(){
     setTimeout(function(){
