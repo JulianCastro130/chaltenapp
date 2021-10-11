@@ -6,11 +6,13 @@ function calculo() {
     const calculadorVuelta = (pVelocidad,pTiempo,pDistancia) => (pDistancia / pVelocidad) * pTiempo
     const mostrarDatos = (pDato) => alert('Su recorrido durará un tiempo estimado de: '+pDato+'horas')
   
-    var eleccionRecorrido = parseInt(ingresoDato("Elija sendero. 1: Torre, 2: Fitz"))
+    var eleccionRecorrido = parseInt(ingresoDato("Elija sendero. 1: Torre, 2: Fitz, 3: Chorrillo"))
     if (eleccionRecorrido === 1) {
       distanciaRecorrido = 9
     } else if (eleccionRecorrido === 2){
       distanciaRecorrido = 10
+    } else if (eleccionRecorrido === 3){
+      distanciaRecorrido = 4
     } else {alert('ERROR')}
   
     var cantidadDeHoras = calculadorVuelta(velocidadCaminar,hora,distanciaRecorrido)
