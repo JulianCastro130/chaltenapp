@@ -9,7 +9,7 @@ class sendero {
         this.tiempo2 = tiempo2;
         this.altura = altura;
         this.mapa = mapa;
-        this.info = `Está a ${distancia}km del pueblo, el nivel de dificultad es ${dificultad2}, se ascienden ${altura}snm durante todo el trayecto, y se estima que tardarán ${tiempo} en llegar`;
+        this.info = `Está a ${distancia}km del pueblo, el nivel de dificultad es ${dificultad2}, se ascienden ${altura}msnm durante todo el trayecto, y se estima que tardarán ${tiempo} en llegar`;
     }
     verInfo(){
         alert(this.info)
