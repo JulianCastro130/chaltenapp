@@ -9,6 +9,7 @@ function capture(){
     newUser = new User(userCapture,countryCapture);
     console.log(newUser);
     addPlus()
+    // Guardo usuario
     localStorage.setItem('nameUser', JSON.stringify(userCapture))
     localStorage.setItem('countryUser', JSON.stringify(countryCapture))
 }
