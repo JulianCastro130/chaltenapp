@@ -36,3 +36,12 @@ productos.forEach((prod) => {
     })
 })
 
+
+$(()=> {
+    $("#btn-show").click(function (){
+        $("#contenedor").animate({
+            "opacity": "toggle",
+            "height": "toggle"
+        });
+    });
+})
