@@ -18,7 +18,7 @@ const mostrarProductos = (array) => {
         div.classList.add('producto')
         div.className = "card-img-top";
         div.innerHTML = `
-        <div class="card mt-4 ml-5 p-0 rounded text-center">
+        <div class="card mt-4 ml-5 p-0 rounded text-center" style="width: 200px">
                     <img src=${producto.img} alt="">
                     <h3>${producto.nombre}</h3>
                     <p>${producto.desc}</p>

@@ -20,15 +20,15 @@
         <button id="boton-carrito" class="btn"><i class="fas fa-bed"></i><span id="contadorCarrito">0</span></button>
     </nav>
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col justify-content-center">      
-                <select id="establecimiento" class="justify-content-center">
+        <div class="row">
+            <div class="col">      
+                <select id="establecimiento">
                     <option value="all">Todos</option>
                     <option value="Hotel">Hotel</option>
                     <option value="Hostel">Hostel</option>
                     <option value="Cabaña">Cabaña</option>
                 </select>
-                <select id="precios" class="justify-content-center">
+                <select id="precios">
                     <option value="0">Todos</option>
                     <option value="1">0 - 5000</option>
                     <option value="2">5000 - 10000</option>
@@ -39,7 +39,7 @@
                 </main>
                 <div class="modal-contenedor">
                     <div class="modal-carrito">
-                        <h3>Carrito</h3>
+                        <h3>Camas</h3>
                         <button class="btn" id="carritoCerrar"><i class="fas fa-times-circle"></i></button>
                         <div id="carrito-contenedor"></div>
                         <p class="precioProducto text-center">Precio total: $<span id="precioTotal"></span></p>
