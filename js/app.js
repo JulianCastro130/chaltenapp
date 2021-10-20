@@ -9,20 +9,20 @@ const precioTotal = document.getElementById('precioTotal')
 const carrito = []
 
 
+
 const mostrarProductos = (array) => {
     contenedorProductos.innerHTML = ''
     
     array.forEach( (producto) => {
         const div = document.createElement('div')
         div.classList.add('producto')
-        div.className = "card mt-4 text-center";
         div.innerHTML = `
                     <img src=${producto.img} alt="">
                     <h3>${producto.nombre}</h3>
                     <p>${producto.desc}</p>
-                    <p>Desayuno: ${producto.desayuno}</p>
+                    <p>establecimiento: ${producto.establecimiento}</p>
                     <p class="precioProducto">Precio: $${producto.precio}</p>
-                    <button onclick="agregarAlCarrito(${producto.id})" class="boton-agregar">Agregar <i class="fas fa-bed"></i></button>
+                    <button onclick="agregarAlCarrito(${producto.id})" class="boton-agregar">Agregar <i class="fas fa-shopping-cart"></i></button>
         `
         
         contenedorProductos.appendChild(div)
@@ -99,26 +99,35 @@ const eliminarProducto = (itemId) => {
 
 // == FILTROS == 
 
+const selectFiltro = document.getElementById('establecimiento')
 const selectPrecios = document.getElementById('precios')
 
 
 const filtrar = () => {
+    let valorFiltroEstablecimientos = selectFiltro.value
     let valorFiltroPrecios = selectPrecios.value
     
     let arrayFiltrado = []
 
+    if (valorFiltroEstablecimientos == 'all') {
+        arrayFiltrado = stockProductos
+    } else {
+        arrayFiltrado = stockProductos.filter( el => el.establecimiento == selectFiltro.value) 
+    }
+
     if (valorFiltroPrecios == 1) {
         arrayFiltrado = arrayFiltrado.filter( el => el.precio <= 5000)
-    } if (valorFiltroPrecios == 2) {
+    } else if (valorFiltroPrecios == 2) {
         arrayFiltrado = arrayFiltrado.filter( el => el.precio >= 5000)
-    } if (valorFiltroPrecios == 0) {
-        arrayFiltrado = stockProductos
     }
 
     mostrarProductos(arrayFiltrado)
 
 }
 
+selectFiltro.addEventListener('change', ()=>{
+    filtrar()
+})
 selectPrecios.addEventListener('change', ()=>{
     filtrar()
 })
@@ -137,3 +146,23 @@ buscador.addEventListener('input', () => {
     const search = buscador.value.trim().toLowerCase()
     mostrarProductos( buscar(search) )  
 })
+
+
+// const mostrarProductos = (array) => {
+//     contenedorProductos.innerHTML = ''
+    
+//     array.forEach( (producto) => {
+//         const div = document.createElement('div')
+//         div.classList.add('producto')
+//         div.className = "card mt-4 text-center";
+//         div.innerHTML = `
+//                     <img src=${producto.img} alt="">
+//                     <h3>${producto.nombre}</h3>
+//                     <p>${producto.desc}</p>
+//                     <p>Desayuno: ${producto.desayuno}</p>
+//                     <p class="precioProducto">Precio: $${producto.precio}</p>
+//                     <button onclick="agregarAlCarrito(${producto.id})" class="boton-agregar">Agregar <i class="fas fa-bed"></i></button>
+//         `
+        
+//         contenedorProductos.appendChild(div)
+//     } )
