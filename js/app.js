@@ -16,13 +16,16 @@ const mostrarProductos = (array) => {
     array.forEach( (producto) => {
         const div = document.createElement('div')
         div.classList.add('producto')
+        div.className = "card-img-top";
         div.innerHTML = `
+        <div class="card mt-4 ml-5 p-0 rounded text-center">
                     <img src=${producto.img} alt="">
                     <h3>${producto.nombre}</h3>
                     <p>${producto.desc}</p>
                     <p>establecimiento: ${producto.establecimiento}</p>
                     <p class="precioProducto">Precio: $${producto.precio}</p>
-                    <button onclick="agregarAlCarrito(${producto.id})" class="boton-agregar">Agregar <i class="fas fa-shopping-cart"></i></button>
+                    <button onclick="agregarAlCarrito(${producto.id})" class="btn boton-agregar">Agregar <i class="fas fa-bed"></i></button>
+        </div>
         `
         
         contenedorProductos.appendChild(div)
@@ -66,12 +69,12 @@ const actualizarCarrito = () => {
     carrito.forEach((prod) => {
         const div = document.createElement('div')
         div.classList.add('productoEnCarrito')
-
+        div.className = "justify-content-center"
         div.innerHTML = `
                 <p>${prod.nombre}</p>
                 <p>Precio: $${prod.precio}</p>
                 <p>Cantidad: ${prod.cantidad}</p>
-                <button onclick="eliminarProducto(${prod.id})" class="boton-eliminar"><i class="fas fa-trash-alt"></i></button>
+                <button onclick="eliminarProducto(${prod.id})" class="boton-eliminar"><i class="fas fa-bed"></i></button>
              `
 
         contenedorCarrito.appendChild(div)
@@ -118,7 +121,9 @@ const filtrar = () => {
     if (valorFiltroPrecios == 1) {
         arrayFiltrado = arrayFiltrado.filter( el => el.precio <= 5000)
     } else if (valorFiltroPrecios == 2) {
-        arrayFiltrado = arrayFiltrado.filter( el => el.precio >= 5000)
+        arrayFiltrado = arrayFiltrado.filter( el => el.precio >= 5000 || el.precio <= 10000)
+    } else if (valorFiltroPrecios == 3) {
+        arrayFiltrado = arrayFiltrado.filter( el => el.precio >= 10000)
     }
 
     mostrarProductos(arrayFiltrado)
@@ -146,23 +151,3 @@ buscador.addEventListener('input', () => {
     const search = buscador.value.trim().toLowerCase()
     mostrarProductos( buscar(search) )  
 })
-
-
-// const mostrarProductos = (array) => {
-//     contenedorProductos.innerHTML = ''
-    
-//     array.forEach( (producto) => {
-//         const div = document.createElement('div')
-//         div.classList.add('producto')
-//         div.className = "card mt-4 text-center";
-//         div.innerHTML = `
-//                     <img src=${producto.img} alt="">
-//                     <h3>${producto.nombre}</h3>
-//                     <p>${producto.desc}</p>
-//                     <p>Desayuno: ${producto.desayuno}</p>
-//                     <p class="precioProducto">Precio: $${producto.precio}</p>
-//                     <button onclick="agregarAlCarrito(${producto.id})" class="boton-agregar">Agregar <i class="fas fa-bed"></i></button>
-//         `
-        
-//         contenedorProductos.appendChild(div)
-//     } )
