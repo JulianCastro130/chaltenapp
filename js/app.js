@@ -16,10 +16,10 @@ const mostrarProductos = (array) => {
     array.forEach( (producto) => {
         const div = document.createElement('div')
         div.classList.add('producto')
-        div.className = "card-img-top";
+        div.className = "card-img-top rounded";
         div.innerHTML = `
-        <div class="card mt-4 ml-5 p-0 rounded text-center" style="width: 200px">
-                    <img src=${producto.img} alt="">
+        <div class="card mx-auto mt-4 p-0 rounded justify-content-center text-center" style="width: 200px">
+                    <img src=${producto.img} class="rounded" alt="">
                     <h3>${producto.nombre}</h3>
                     <p>${producto.desc}</p>
                     <p>establecimiento: ${producto.establecimiento}</p>

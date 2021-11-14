@@ -11,7 +11,7 @@ let stockProductos = [
     {id: 10, nombre: "Alma Travelers", tipo: "Hostel", desc: "Hostel", precio: 3500, establecimiento: "Hostel", img: 'img/sleep/10AlmaTravellers.jpg'},
     {id: 11, nombre: "Del Lago", tipo: "Hostel", desc: "Hostel", precio: 2500, establecimiento: "Hostel", img: 'img/sleep/11DelLago.jpg'},
     {id: 12, nombre: "Austral", tipo: "Cabaña", desc: "Cabañas", precio: 6000, establecimiento: "Cabaña", img: 'img/sleep/12cabaustral.jpg'},
-    {id: 13, nombre: "La Loma", tipo: "Cabaña", desc: "Cabañas", precio: 6500, establecimiento: "Cabaña", img: 'img/sleep/13LaLoma'},
+    {id: 13, nombre: "La Loma", tipo: "Cabaña", desc: "Cabañas", precio: 6500, establecimiento: "Cabaña", img: 'img/sleep/13LaLoma.jpg'},
     {id: 14, nombre: "Buenavista Chaltén", tipo: "Cabaña", desc: "Cabañas", precio: 7000, establecimiento: "Cabaña", img: 'img/sleep/14Buenavista.jpg'},
     {id: 15, nombre: "Rivendel", tipo: "Cabaña", desc: "Cabañas", precio: 7000, establecimiento: "Cabaña", img: 'img/sleep/15Rivendel.jpg'},
 ]
