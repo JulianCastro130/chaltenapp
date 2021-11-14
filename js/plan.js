@@ -12,9 +12,9 @@ class UI {
         element.innerHTML = `
             <div class="card text-center mb-4">
                 <div class="card-body">
-                    <strong>Path</strong>: ${plan.name}
-                    <strong>Date</strong>: ${plan.date}
-                    <strong>Time</strong>: ${plan.time}
+                    <strong>Sendero</strong>: ${plan.name}
+                    <strong>Día</strong>: ${plan.date}
+                    <strong>Hora</strong>: ${plan.time}
                     <a href="#" class="btn btn-danger" name="delete">Delete</a>
                 </div>
             </div>
@@ -58,7 +58,7 @@ document.getElementById('plan-form')
     const ui = new UI();
     ui.addPlan(plan)
     ui.resetForm();
-    ui.showMessage('Plan added!', 'success');
+    ui.showMessage('Plan realizado!', 'success');
 
     e.preventDefault();
 })
