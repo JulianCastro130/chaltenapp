@@ -5,7 +5,7 @@ if (contenedorUser) {
     const element = document.createElement('div');
     element.className = "mr-0"
     element.innerHTML = `
-    <p>Welcome: ${user}</p>
+    <p>Bienvenido: ${user}</p>
     `;
     contenedorUser.appendChild(element);
 }

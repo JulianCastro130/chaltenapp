@@ -30,9 +30,9 @@ function formatSearch(jsonObjet) {
     var city_temp = jsonObjet.main.temp;
     var city_wind = jsonObjet.wind.speed;
 
-    $("#city-name").text("City: "+city_name);
-    $("#city-weather").text("Weather: "+city_weather);
-    $("#city-desc").text("Desc: "+city_desc);
-    $("#city-temp").text("Temperature: "+city_temp+" Celsius");
-    $("#city-wind").text("Wind Speed "+city_wind+" Km/h");
+    $("#city-name").text("Ciudad: "+city_name);
+    $("#city-weather").text("Clima: "+city_weather);
+    $("#city-desc").text("Descripción: "+city_desc);
+    $("#city-temp").text("Temperatura: "+city_temp+" °C");
+    $("#city-wind").text("Velocidad del viento "+city_wind+" Km/h");
 }

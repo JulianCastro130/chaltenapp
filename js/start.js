@@ -1,24 +1,3 @@
-function calculo() {
-    var distanciaRecorrido;
-    var velocidadCaminar = 3
-    var hora = 1
-    const ingresoDato = (pPregunta) => prompt(pPregunta)
-    const calculadorVuelta = (pVelocidad,pTiempo,pDistancia) => (pDistancia / pVelocidad) * pTiempo
-    const mostrarDatos = (pDato) => alert('Su recorrido durará un tiempo estimado de: '+pDato+'horas')
-  
-    var eleccionRecorrido = parseInt(ingresoDato("Elija sendero. 1: Torre, 2: Fitz, 3: Chorrillo"))
-    if (eleccionRecorrido === 1) {
-      distanciaRecorrido = 9
-    } else if (eleccionRecorrido === 2){
-      distanciaRecorrido = 10
-    } else if (eleccionRecorrido === 3){
-      distanciaRecorrido = 4
-    } else {alert('ERROR')}
-  
-    var cantidadDeHoras = calculadorVuelta(velocidadCaminar,hora,distanciaRecorrido)
-  
-    mostrarDatos(cantidadDeHoras)
-}
 window.onload = init;
 function init(){
   document.querySelector(".start").addEventListener("click",cronometrar);

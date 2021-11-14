@@ -48,8 +48,8 @@ const contenedorSenderos = document.getElementById("senderos");
 if (contenedorSenderos) {
   arraySenderos.forEach((senderos) => {
     const div = document.createElement("div");
-    div.className = "card-img-top";
-    div.style = "width: 100%";
+    div.className = "card-img-top mx-auto text-center";
+    div.style = "width: 35%";
     div.innerHTML = `
                     <div class="card mt-4 ml-5 p-0 rounded">
                     <img src=${senderos.imagen} class="rounded">
